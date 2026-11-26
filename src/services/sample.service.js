@@ -1,16 +1,12 @@
 const Sample = require('../models/sample.model');
 
-async function saveSample(features) {
+async function saveSample(sampleData) {
 
-    // TODO: Almacenar las features en MongoDB.
+    // TODO 1: Almacenar la muestra en MongoDB.
+    const sample = await Sample.create(sampleData);
 
-    const error = new Error(
-        'Sample persistence is not implemented'
-    );
-
-    error.code = 'NOT_IMPLEMENTED';
-
-    throw error;
+    // TODO 2: Devolver el documento almacenado.
+    return sample;
 }
 
 module.exports = {
